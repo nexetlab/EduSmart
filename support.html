@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support - EduSmart</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">EduSmart</div>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="courses.html"><i class="fas fa-book-open"></i> Courses</a>
+        <a href="assignments.html"><i class="fas fa-tasks"></i> Assignments</a>
+        <a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="support.html" class="active"><i class="fas fa-headset"></i> Support</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <input type="text" placeholder="Search help articles..." class="search-bar" />
+        <div class="user-profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-avatar" />
+          <span>John Doe</span>
+        </div>
+      </header>
+      
+      <section class="support-content">
+        <div class="welcome">
+          <h1><i class="fas fa-hands-helping"></i> How can we help you today?</h1>
+          <p>We're here to help you with any questions or issues you might have.</p>
+        </div>
+
+        <!-- Support Options Cards -->
+        <div class="support-options">
+          <div class="support-card" onclick="showContactForm()">
+            <div class="support-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Contact Us</h3>
+            <p>Send us a message and we'll get back to you within 24 hours</p>
+          </div>
+          
+          <div class="support-card" onclick="showFAQ()">
+            <div class="support-icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <h3>FAQs</h3>
+            <p>Find answers to common questions in our knowledge base</p>
+          </div>
+          
+          <div class="support-card">
+            <div class="support-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Live Chat</h3>
+            <p>Chat with a support agent in real-time (Available 9am-5pm EST)</p>
+            <button class="chat-btn">Start Chat</button>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container" id="contactForm">
+          <h2><i class="fas fa-paper-plane"></i> Send us a message</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="technical">Technical Issue</option>
+                <option value="account">Account Help</option>
+                <option value="billing">Billing Question</option>
+                <option value="feedback">Feedback/Suggestion</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Describe your issue in detail..." required></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="submit-btn">Send Message</button>
+              <button type="button" class="cancel-btn" onclick="hideContactForm()">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-container" id="faqSection">
+          <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <span>How do I reset my password?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>To reset your password, click on "Forgot Password" on the login page. You'll receive an email with instructions to create a new password. If you don't see the email, check your spam folder.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <span>Where can I find my certificates?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>All your completed certificates are available in the Certificates section. You can download them as PDF files or share them directly with employers via a unique link.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <span>What are the system requirements?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>EduSmart works on all modern browsers (Chrome, Firefox, Safari, Edge) on both Windows and macOS. For mobile access, we recommend using our iOS or Android app for the best experience.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <span>How do I cancel my subscription?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can manage your subscription in the Account Settings page. Cancellations take effect at the end of your current billing period, and you'll retain access until that date.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="resources-section">
+          <h2><i class="fas fa-book"></i> Helpful Resources</h2>
+          <div class="resource-cards">
+            <a href="#" class="resource-card">
+              <i class="fas fa-video"></i>
+              <h3>Video Tutorials</h3>
+              <p>Watch step-by-step guides on using EduSmart</p>
+            </a>
+            
+            <a href="#" class="resource-card">
+              <i class="fas fa-file-pdf"></i>
+              <h3>User Manual</h3>
+              <p>Download our comprehensive user guide</p>
+            </a>
+            
+            <a href="#" class="resource-card">
+              <i class="fas fa-users"></i>
+              <h3>Community Forum</h3>
+              <p>Connect with other EduSmart users</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Toggle contact form visibility
+    function showContactForm() {
+      document.getElementById('contactForm').style.display = 'block';
+      document.getElementById('faqSection').style.display = 'none';
+    }
+    
+    function hideContactForm() {
+      document.getElementById('contactForm').style.display = 'none';
+    }
+    
+    // Toggle FAQ section visibility
+    function showFAQ() {
+      document.getElementById('faqSection').style.display = 'block';
+      document.getElementById('contactForm').style.display = 'none';
+    }
+    
+    // Toggle FAQ answers
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      } else {
+        answer.style.display = 'block';
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
+    }
+    
+    // Initialize - hide contact form by default
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('contactForm').style.display = 'none';
+      
+      // Set all FAQ answers to be hidden initially
+      const answers = document.querySelectorAll('.faq-answer');
+      answers.forEach(answer => {
+        answer.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
