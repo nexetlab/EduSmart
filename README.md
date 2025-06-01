@@ -58,5 +58,5 @@ A modern, responsive Learning Management System (LMS) designed to provide an int
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/edusmart.git
-   cd edusmart
+   git clone https://nexetlab.github.io/EduSmart.git
+   cd EduSmart
